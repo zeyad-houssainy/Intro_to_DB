@@ -1,5 +1,10 @@
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 
+CREATE TABLE Authors (
+	author_id INT PRIMARY KEY NOT NULL, 
+    author_name VARCHAR(215)
+);
+
 CREATE TABLE Books (
 	book_id INT NOT NULL PRIMARY KEY, 
 	title VARCHAR(30) NOT NULL, 
@@ -7,12 +12,11 @@ CREATE TABLE Books (
 	price DOUBLE NOT NULL,
 	publication_date DATE NOT NULL,
 	FOREIGN KEY (author_id) REFERENCES Authors(author_id)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
-CREATE TABLE Authors (
-	author_id INT PRIMARY KEY NOT NULL, 
-    author_name VARCHAR(215)
-);
+
 
 CREATE TABLE Customers (
 	customer_id INT PRIMARY KEY NOT NULL,
@@ -26,6 +30,8 @@ CREATE TABLE Orders (
 	customer_id INT NOT NULL,
 	order_date DATE NOT NULL,
 	FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE Order_Details(
@@ -34,5 +40,9 @@ CREATE TABLE Order_Details(
 	book_id INT NOT NULL, 
     quantity DOUBLE,
 	FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+		ON DELETE CASCADE
+        ON UPDATE CASCADE
     FOREIGN KEY (book_id) REFERENCES Books(book_id)
+		ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
