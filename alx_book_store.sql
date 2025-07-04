@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS Books (
 );
 
 
-
 CREATE TABLE IF NOT EXISTS Customers (
 	customer_id INT PRIMARY KEY NOT NULL,
 	customer_name VARCHAR(215),
