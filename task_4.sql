@@ -6,5 +6,5 @@ SELECT
 FROM 
     information_schema.columns
 WHERE
-    TABLE_SCHEMA = "alx_book_store", 
-    TABLE_NAME = "Books";
+    TABLE_SCHEMA = 'alx_book_store'
+    TABLE_NAME = 'Books';
