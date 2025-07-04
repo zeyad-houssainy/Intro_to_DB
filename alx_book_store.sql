@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Authors (
 CREATE TABLE IF NOT EXISTS Books (
 	book_id INT NOT NULL PRIMARY KEY, 
 	title VARCHAR(30) NOT NULL, 
-	author_id INT  NOT NULL , 
+	author_id INT NOT NULL, 
 	price DOUBLE NOT NULL,
 	publication_date DATE NOT NULL,
 	FOREIGN KEY (author_id) REFERENCES Authors(author_id)
